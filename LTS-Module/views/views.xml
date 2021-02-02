@@ -1,0 +1,81 @@
+<odoo>
+  <data>
+
+    <record id="employee_form_inherited" model="ir.ui.view">
+            <field name="name">hr.employee.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//field[@name='coach_id'] " position="after">
+                    <field name="joining_date"/>
+                </xpath>
+                <xpath expr="//field[@name='joining_date'] " position="after">
+                    <field name="leaving_date"/>
+                </xpath>
+                <xpath expr="//field[@name='address_home_id'] " position="before">
+                    <field name="father_name"/>
+                </xpath>
+                <xpath expr="//field[@name='father_name'] " position="after">
+                    <field name="father_occupation"/>
+                </xpath>
+                <xpath expr="//field[@name='father_occupation'] " position="after">
+                    <field name="blood_group"/>
+                </xpath>
+
+                       <xpath expr="//field[@name='blood_group'] " position="after">
+                    <field name="gender_c"/>
+                </xpath>
+
+                       <xpath expr="//field[@name='coach_id'] " position="before">
+                    <field name="employee_type"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id'] " position="after">
+                    <field name="last_promotional_date"/>
+                </xpath>
+
+                <xpath expr="//group[@name='managers']" position="attributes">
+                    <attribute name="string">Employment Type</attribute>
+                </xpath>
+
+
+
+                <xpath expr="//field[@name='address_id'] " position="after">
+                    <field name="location_work"/>
+                </xpath>
+
+                <xpath expr="//field[@name='work_location']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//div/h1/field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                                <xpath expr="//field[@name='gender']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//div/h1/field[@name='name']" position="before">
+                    <div class="oe_title">
+                        <span class="o_form_label">Serial Number</span>
+                        <h1>
+                            <field name="reference_no" readonly="1"/>
+                            <field name="serial_number"/>
+                        </h1>
+
+                    </div>
+
+                </xpath>
+                <xpath expr="//div/h1/field[@name='serial_number']" position="after">
+                    <h1 class="d-flex">
+                                <field name="name" placeholder="Employee's Name" required="True"/>
+                   </h1>
+                </xpath>
+
+
+
+
+            </field>
+    </record>
+  </data>
+</odoo>
