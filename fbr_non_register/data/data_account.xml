@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fbr_sale_tax" model="account.account">
+            <field name="code">252433</field>
+            <field name="name">Sale Tax</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+        </record>
+
+        <record id="fbr_income_tax" model="account.account">
+            <field name="code">252533</field>
+            <field name="name">Income Tax</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+        </record>
+
+         <record id="fbr_purchase_tax" model="account.account">
+            <field name="code">252633</field>
+            <field name="name">Purchase Tax</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+        </record>
+
+        <record id="fbr_purchase_income_tax" model="account.account">
+            <field name="code">252733</field>
+            <field name="name">Purchase Income Tax</field>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+        </record>
+
+
+    </data>
+</odoo>
