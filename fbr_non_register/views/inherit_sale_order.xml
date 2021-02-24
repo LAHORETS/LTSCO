@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="inherit_form_sale_order" model="ir.ui.view">
+            <field name="name">Inherit Sale Order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+<!--                    <field name="sale_tax" force_save="1" attrs="{'invisible': [('tax_states', '=', 'register')]}"/>-->
+<!--                    <field name="income_tax" force_save="1" attrs="{'invisible': [('tax_states', '=', 'register')]}"/>-->
+                    <field name="tax_states" force_save="1"/>
+                    <field name="sale_tax2" force_save="1" attrs="{'invisible': [('tax_states', '!=', 'non_register')]}"/>
+                    <field name="income_tax2" force_save="1" attrs="{'invisible': [('tax_states', '!=', 'non_register')]}"/>
+                </xpath>
+<!--                 <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="after">-->
+<!--                    <field name="sale_tax1" force_save="1"/>-->
+<!--                    <field name="income_tax1" force_save="1"/>-->
+<!--                </xpath>-->
+
+            </field>
+        </record>
+
+        <!--        Inherit Form View to Modify it-->
+<!--        <record id="inherit_sale_order" model="ir.ui.view">-->
+<!--            <field name="name">sale.order.form.inherit</field>-->
+<!--            <field name="model">sale.order</field>-->
+<!--            <field name="inherit_id" ref="sale.view_order_form"/>-->
+<!--            <field name="arch" type="xml">-->
+
+<!--                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="after">-->
+<!--                    <field name="sale_tax1" force_save="1"/>-->
+<!--                    <field name="income_tax1" force_save="1"/>-->
+<!--                </xpath>-->
+
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>
