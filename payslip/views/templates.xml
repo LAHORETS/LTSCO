@@ -22,7 +22,7 @@
         <xpath expr="//div[@class='page']" position="replace">
             <div class="page">
            <div class="header">
-           <h1>Header title</h1>
+           <h3>Header title</h3>
           <t t-call="hr_payroll.my_custom_layout_header">
           </t>
   </div>
