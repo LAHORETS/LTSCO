@@ -23,7 +23,7 @@
             <div class="page">
            <div class="header">
            <h3>Header title</h3>
-          <t t-call="hr_payroll.my_custom_layout_header">
+          <t t-call="payslip.my_custom_layout_header">
           </t>
   </div>
                 <h2>Pay Slip</h2>
