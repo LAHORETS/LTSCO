@@ -5,7 +5,9 @@
 
 
         <template id="my_custom_layout_header">
-
+            <t t-call="hr_payroll.html_container">
+            <t t-foreach="docs" t-as="o">
+            <t t-call="hr_payroll.external_layout">
             <t t-foreach="docs" t-as="o">
                 <div class="header">
                     <div class="row" style="border-bottom: 1px solid black;">
@@ -13,6 +15,8 @@
                             <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 45px;"/>
                         <div t-field="o.company_id.partner_id" t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' /> </div></div></div>
                     </t>
+                </t>
+              </t>
         </template>
 
 
