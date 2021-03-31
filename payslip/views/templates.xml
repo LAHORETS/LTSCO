@@ -28,7 +28,7 @@
            <div class="header">
            <h3>Header title</h3>
 <!--           <t t-call="payslip.my_custom_layout_header"> -->
-          </t>
+<!--           </t> -->
   </div>        <div style="text-align: center;">
                 <h2 >Salary Slip<h2>
                     </div>
