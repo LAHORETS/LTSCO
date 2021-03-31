@@ -3,11 +3,11 @@
 
 
 
- 
+<!--  
         <template id="my_custom_layout_header">
-<!--             <t t-call="web.html_container"> -->
+            <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
-<!--             <t t-call="web.external_layout"> -->
+            <t t-call="web.external_layout">
             <t t-foreach="docs" t-as="o">
                 <div class="header">
                     <div class="row" style="border-bottom: 1px solid black;">
@@ -17,7 +17,7 @@
                     </t>
                 </t>
               </t>
-        </template>
+        </template> -->
 
 
 
@@ -27,7 +27,7 @@
             <div class="page">
            <div class="header">
            <h3>Header title</h3>
-          <t t-call="payslip.my_custom_layout_header">
+<!--           <t t-call="payslip.my_custom_layout_header"> -->
           </t>
   </div>        <div style="text-align: center;">
                 <h2 >Salary Slip<h2>
