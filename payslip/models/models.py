@@ -1,7 +1,8 @@
+
+
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from odoo.tools.safe_eval import datetime
 from datetime import datetime
 
 
@@ -91,6 +92,3 @@ class EmployeeInherit(models.Model):
     _inherit = 'hr.employee'
 
     payment_mode = fields.Selection([('cash', 'Cash'), ('bank_transfer', 'Bank Transfer')], string="Payment Mode")
-
-
-
