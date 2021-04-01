@@ -12,7 +12,7 @@ class payroll(models.Model):
     year = fields.Char("Year", compute="compute_year")
     dept = fields.Char("Department")
     # date = fields.Date("Date")
-    date_start = fields.Char("Date To", compute="compute_date")
+    date_start = fields.Char("Date To", compute="compute_dates")
     amount_in_word = fields.Char("Amount In Words", compute="amount_in_words")
 
     def amount_in_words(self):
@@ -34,7 +34,7 @@ class payroll(models.Model):
             a = i.date_from.strftime("%Y")
             i.year = a
 
-    def compute_date(self):
+    def compute_dates(self):
         for i in self:
             datetimeobject = datetime.strptime(str(i.date_from), '%Y-%m-%d')
             print('az', datetimeobject)
