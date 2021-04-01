@@ -8,10 +8,10 @@
       <field name="model">hr.contract</field>
       <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
       <field name="arch" type="xml">
-      <xpath expr="//group[@name='yearly_advantages']" position="attributes">
+      <xpath expr="//group[@name='main_info']" position="attributes">
           <attribute name="string">Allowances</attribute>
       </xpath>
-      <xpath expr="//group[@name='yearly_advantages']" position="inside">
+      <xpath expr="//group[@name='main_info']" position="inside">
           <field name="conveyance"></field>
           <field name="mobile_allowance"/>
           <field name="meal_allowance"/>
