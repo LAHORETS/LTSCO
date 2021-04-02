@@ -83,8 +83,8 @@ class FbrTaxesAccount(models.Model):
 
     def action_calculate(self):
         if self.case1== True:
-            expense_account = self.env['account.account'].search([('user_type_id', '=', 'Expenses')])[0]
-            pay_account = self.env['account.account'].search([('user_type_id', '=', 'Payable')])[0]
+            expense_account = self.env['account.account'].search([('user_type_id', 'ilike', 'Expenses')])[0]
+            pay_account = self.env['account.account'].search([('user_type_id', 'ilike', 'Payable')])[0]
             total_income_tax = 0
             total_sale_tax = 0
             total_income_tax = self.after_wht - self.amount_untaxed
