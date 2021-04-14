@@ -1,54 +1,44 @@
 <odoo>
 	<data>
-
 		<record id="view_partner_form_fbr_inh" model="ir.ui.view">
 			<field name="name">res.partner.form</field>
 			<field name="model">res.partner</field>
 			<field name="inherit_id" ref="base.view_partner_form"/>
 			<field name="arch" type="xml">
-
 				<xpath expr="//field[@name='vat']" position="after">
 					<field name="fbr_ntn"/>
 					<field name="fbr_stn"/>
 					<field name="tax_type"/>
 				</xpath>
-
 			</field>
 		</record>
-
 		<record id="view_account_form_fbr_inh" model="ir.ui.view">
 			<field name="name">account.move.form</field>
 			<field name="model">account.move</field>
 			<field name="inherit_id" ref="account.view_move_form"/>
 			<field name="arch" type="xml">
 
-					 <xpath expr="//field[@name='ref']" position="after">
-						 <field name="case1" />
-					<field name="case2" />
-					<field name="case3" />
-
+				<xpath expr="//field[@name='ref']" position="after">
+					<field name="case1"  invisible="1"/>
+					<field name="case2" invisible="1"/>
+					<field name="case3"  invisible="1"/>
+					<field name="case" invisible="1"/>
+					<field name="type" invisible="1"/>
 				</xpath>
-				<xpath expr="//header/button[@name='action_post']" position="after">
-				<button string="Test" type="object" name="action_calculate"/>
-            </xpath>
-
-
-				<xpath expr="//field[@name='amount_untaxed']" position="after">
-					<field name="wth_amount" />
-					<field name="after_wht" />
-					<field name="tax_amount" />
-					<field name="after_tax_wht" />
-					<field name="grand_total" />
+<!--				<xpath expr="//field[@name='amount_untaxed']" position="after">-->
+<!--					<field name="wth_amount" attrs="{'invisible':['&amp;',('case','!=',True),('type','!=','in_invoice')]}"/>-->
+<!--					<field name="tax_amount" attrs="{'invisible':['&amp;',('case','!=',True),('type','!=','in_invoice')]}"/>-->
+<!--					<field name="after_wht" attrs="{'invisible':['&amp;',('case','!=',True),('type','!=','in_invoice')]}"/>-->
+<!--&lt;!&ndash;					<field name="after_wht" attrs="{'invisible':['&amp;',('case','!=',True),('type','!=','in_invoice')]}"/>&ndash;&gt;-->
+<!--					<field name="after_tax_wht" attrs="{'invisible':['&amp;',('case','!=',True),('type','!=','in_invoice')]}"/>-->
+<!--					<field name="grand_total" attrs="{'invisible':['&amp;',('case','!=',True),('type','!=','in_invoice')]}"/>-->
+<!--				</xpath>-->
+				<xpath expr="//field[@name='amount_by_group']" position="attributes">
+					<attribute name="attrs">{'invisible': [('case','!=',False)]}</attribute>
 				</xpath>
-<!--				 <xpath expr="//field[@name='amount_by_group']" position="attributes">-->
-<!--                    <attribute name="attrs">{'invisible': [('type', '!=', 'in_invoice')]}</attribute>-->
-<!--                </xpath>-->
-
-
-
-
-
-
+				<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='tax_ids']"  position="attributes">
+					<attribute name="attrs">{'column_invisible': [('parent.case','=',True)]}</attribute>
+				</xpath>
 			</field>
 		</record>
 	</data>
