@@ -36,9 +36,7 @@
 				<xpath expr="//field[@name='amount_by_group']" position="attributes">
 					<attribute name="attrs">{'invisible': [('case','!=',False)]}</attribute>
 				</xpath>
-				<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='tax_ids']"  position="attributes">
-					<attribute name="attrs">{'column_invisible': [('parent.case','=',True)]}</attribute>
-				</xpath>
+				
 			</field>
 		</record>
 	</data>
