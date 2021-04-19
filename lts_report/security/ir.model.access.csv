@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lts_report_lts_report,lts_report.lts_report,model_lts_report_lts_report,base.group_user,1,1,1,1

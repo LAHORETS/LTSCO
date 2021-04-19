@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <report
+            id="lts_report"
+            model="purchase.order"
+            string="LTS Report"
+            report_type="qweb-pdf"
+            name="lts_report.report_purchase_order"
+            file="lts_report.report_purchase_order"/>
+</odoo>
