@@ -14,45 +14,71 @@
 			 	</div>
 				<br/>
 				<div class="oe_structure"/>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>Owner:</strong>-->
+<!--						<span class="m-0" t-field="o.company_id.name"/>-->
+<!--					</div>-->
+
+<!--					<div class="col-auto col-12 mw-100 mb-2">-->
+<!--						<strong>PO NO:</strong>-->
+<!--						<span class="m-0" t-field="o.name"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>Owner:</strong>
 						<span class="m-0" t-field="o.company_id.name"/>
 					</div>
-
-					<div class="col-auto col-12 mw-100 mb-2">
-						<strong>PO NO:</strong>
-						<span class="m-0" t-field="o.name"/>
+					<div class="col-5">
+						<span>
+							<strong>PO NO:</strong>
+							<span class="m-0" t-field="o.name"/>
+						</span>
 					</div>
 				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>Address:</strong>-->
+<!--						<span class="m-0" t-field="o.company_id.street"/>-->
+<!--					</div>-->
+<!--					<div class="col-auto col-12 mw-100 mb-2">-->
+<!--						<strong>PO Date:</strong>-->
+<!--						<span class="m-0" t-field="o.date_order"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>Address:</strong>
 						<span class="m-0" t-field="o.company_id.street"/>
 					</div>
-					<div class="col-auto col-12 mw-100 mb-2">
-						<strong>PO Date:</strong>
-						<span class="m-0" t-field="o.date_order"/>
+					<div class="col-5">
+						<span>
+							<strong>PO Date:</strong>
+							<span class="m-0" t-field="o.date_order"/>
+						</span>
 					</div>
 				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>Contact No:</strong>-->
+<!--						<span class="m-0" t-field="o.company_id.phone"/>-->
+<!--					</div>-->
+<!--					<div class="col-auto col-12 mw-100 mb-2">-->
+<!--						<strong>Analytical Account:</strong>-->
+<!--						<span class="m-0" t-field="o.order_line[0].account_analytic_id.name"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>Contact No:</strong>
 						<span class="m-0" t-field="o.company_id.phone"/>
 					</div>
-					<div class="col-auto col-12 mw-100 mb-2">
-						<strong>Analytical Account:</strong>
-						<span class="m-0" t-field="o.order_line[0].account_analytic_id.name"/>
-					</div>
-				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
-						<strong>Email:</strong>
-						<span class="m-0" t-field="o.company_id.email"/>
-					</div>
-					<div class="col-auto col-8 mw-100 mb-2">
-						<strong>Location:</strong>
-<!--						<span class="m-0" t-field="doc.name"/>-->
+					<div class="col-5">
+						<span>
+							<strong>Analytical Account:</strong>
+							<span class="m-0" t-field="o.order_line[0].account_analytic_id.name"/>
+						</span>
 					</div>
 				</div>
 				<br/>
@@ -60,47 +86,96 @@
 				 <strong>Vendor Details</strong>
 			 </div>
 				<br/>
-
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>ATTN:</strong>-->
+<!--						<span class="m-0" t-field="o.partner_id.name"/>-->
+<!--					</div>-->
+<!--					<div class="col-auto col-12 mw-100 mb-2">-->
+<!--						<strong>Email:</strong>-->
+<!--						<span class="m-0" t-field="o.partner_id.email"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>ATTN:</strong>
 						<span class="m-0" t-field="o.partner_id.name"/>
 					</div>
-					<div class="col-auto col-12 mw-100 mb-2">
-						<strong>Email:</strong>
-						<span class="m-0" t-field="o.partner_id.email"/>
+					<div class="col-5">
+						<span>
+							<strong>Email:</strong>
+							<span class="m-0" t-field="o.partner_id.name"/>
+						</span>
 					</div>
 				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>Name:</strong>-->
+<!--						<span class="m-0" t-field="o.partner_id.child_ids[0].name"/>-->
+<!--					</div>-->
+<!--					<div class="col-auto col-12 mw-100 mb-2">-->
+<!--						<strong>Address:</strong>-->
+<!--						<span class="m-0" t-field="o.partner_id.street"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>Name:</strong>
-						<span class="m-0" t-field="o.partner_id.child_ids[0].name"/>
+						<t t-if="o.partner_id.child_ids">
+							<span class="m-0" t-field="o.partner_id.child_ids[0].name"/>
+						</t>
 					</div>
-					<div class="col-auto col-12 mw-100 mb-2">
-						<strong>Address:</strong>
-						<span class="m-0" t-field="o.partner_id.street"/>
+					<div class="col-5">
+						<span>
+							<strong>Address:</strong>
+							<span class="m-0" t-field="o.partner_id.street"/>
+						</span>
 					</div>
 				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>NTN:</strong>-->
+<!--&lt;!&ndash;						<span class="m-0" t-field="o.partner_id.ntn"/>&ndash;&gt;-->
+<!--					</div>-->
+<!--					<div class="col-auto col-12 mw-100 mb-2">-->
+<!--						<strong>Contact No:</strong>-->
+<!--						<span class="m-0" t-field="o.partner_id.mobile"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>NTN:</strong>
 <!--						<span class="m-0" t-field="o.partner_id.ntn"/>-->
 					</div>
-					<div class="col-auto col-12 mw-100 mb-2">
-						<strong>Contact No:</strong>
-						<span class="m-0" t-field="o.partner_id.mobile"/>
+					<div class="col-5">
+						<span>
+							<strong>Contact No:</strong>
+							<span class="m-0" t-field="o.partner_id.mobile"/>
+						</span>
 					</div>
 				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>GST/STN:</strong>-->
+<!--&lt;!&ndash;						<span class="m-0" t-field="o.partner_id.ntn"/>&ndash;&gt;-->
+<!--					</div>-->
+<!--					<div class="col-auto col-8 mw-100 mb-2">-->
+<!--						<strong>Fax:</strong>-->
+<!--&lt;!&ndash;						<span class="m-0" t-field="o.partner_id.fax"/>&ndash;&gt;-->
+<!--					</div>-->
+<!--					<br/>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>GST/STN:</strong>
-<!--						<span class="m-0" t-field="o.partner_id.ntn"/>-->
+<!--						<span class="m-0" t-field="o.partner_id.stn"/>-->
 					</div>
-					<div class="col-auto col-8 mw-100 mb-2">
-						<strong>Fax:</strong>
-<!--						<span class="m-0" t-field="o.partner_id.fax"/>-->
+					<div class="col-5">
+						<span>
+							<strong>Fax:</strong>
+<!--							<span class="m-0" t-field="o.partner_id.fax"/>-->
+						</span>
 					</div>
-					<br/>
 				</div>
 				<br/>
 				<div class="row mt32 mb32" id="informations">
@@ -115,14 +190,12 @@
 						<strong>Payment Mode:</strong>
 						<span class="m-0" t-field="o.payment_mode"/>
 					</div>
-
 				</div>
 				<div class="row mt32 mb32" id="informations">
 					<div class="col-auto col-3 mw-100 mb-2">
 						<strong>Payment Term:</strong>
 						<span class="m-0" t-field="o.payment_term_id.name"/>
 					</div>
-
 				</div>
 				<div class="row mt32 mb32" id="informations">
 					<div class="col-auto col-3 mw-100 mb-2">
