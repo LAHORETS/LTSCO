@@ -8,3 +8,4 @@ class PurchaseOrderInh(models.Model):
 
     payment_mode = fields.Selection(selection=[("bank", "Bank"),
                                            ("cash", "Cash")], default="bank", string="Payment Mode")
+    project_no = fields.Char('Project No')

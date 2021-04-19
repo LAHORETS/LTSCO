@@ -49,14 +49,14 @@
 <!--				</div>-->
 				<div class="row">
 					<div class="col-6">
-						<strong>Address:</strong>
-						<span class="m-0" t-field="o.company_id.street"/>
-					</div>
-					<div class="col-5">
 						<span>
 							<strong>PO Date:</strong>
 							<span class="m-0" t-field="o.date_order"/>
 						</span>
+					</div>
+					<div class="col-5">
+						<strong>Project No:</strong>
+						<span class="m-0" t-field="o.project_no"/>
 					</div>
 				</div>
 <!--				<div class="row mt32 mb32" id="informations">-->
@@ -69,6 +69,7 @@
 <!--						<span class="m-0" t-field="o.order_line[0].account_analytic_id.name"/>-->
 <!--					</div>-->
 <!--				</div>-->
+
 				<div class="row">
 					<div class="col-6">
 						<strong>Contact No:</strong>
@@ -78,6 +79,15 @@
 						<span>
 							<strong>Analytical Account:</strong>
 							<span class="m-0" t-field="o.order_line[0].account_analytic_id.name"/>
+						</span>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-5">
+						<span>
+							<strong>Email:</strong>
+							<span class="m-0" t-field="o.company_id.email"/>
 						</span>
 					</div>
 				</div>
@@ -178,31 +188,56 @@
 					</div>
 				</div>
 				<br/>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>Ship To:</strong>-->
+<!--						<span class="m-0" t-field="o.picking_type_id.name"/>-->
+<!--					</div>-->
+
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>Ship To:</strong>
 						<span class="m-0" t-field="o.picking_type_id.name"/>
 					</div>
-
 				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>Payment Mode:</strong>-->
+<!--						<span class="m-0" t-field="o.payment_mode"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>Payment Mode:</strong>
 						<span class="m-0" t-field="o.payment_mode"/>
 					</div>
 				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>Payment Term:</strong>-->
+<!--						<span class="m-0" t-field="o.payment_term_id.name"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>Payment Term:</strong>
 						<span class="m-0" t-field="o.payment_term_id.name"/>
 					</div>
 				</div>
-				<div class="row mt32 mb32" id="informations">
-					<div class="col-auto col-3 mw-100 mb-2">
+<!--				<div class="row mt32 mb32" id="informations">-->
+<!--					<div class="col-auto col-3 mw-100 mb-2">-->
+<!--						<strong>Delivery Time:</strong>-->
+<!--						<span class="m-0" t-field="o.order_line[0].date_planned"/>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="row">
+					<div class="col-6">
 						<strong>Delivery Time:</strong>
 						<span class="m-0" t-field="o.order_line[0].date_planned"/>
 					</div>
 				</div>
+				<br/>
 
             <table class="table table-sm o_main_table">
                 <thead>
