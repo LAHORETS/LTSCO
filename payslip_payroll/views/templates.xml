@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <template id="my_custom_layout_header">
+<!--         <template id="my_custom_layout_header">
 
             <t t-foreach="docs" t-as="o">
 
@@ -11,14 +11,14 @@
                         <div t-field="o.company_id.partner_id" t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' /> </div></div></div>
                     </t>
 
-        </template>
+        </template> -->
     <template id="report_payslip_inherit" inherit_id="hr_payroll.report_payslip">
         <xpath expr="//div[@class='page']" position="replace">
             <div class="page">
            <div class="header">
            <h1>Header title</h1>
-          <t t-call="payslip.my_custom_layout_header">
-          </t>
+<!--           <t t-call="payslip.my_custom_layout_header"> -->
+<!--           </t> -->
     </div>
                 <div style="text-align:center;">
                 <h2>Salary Slip</h2>
