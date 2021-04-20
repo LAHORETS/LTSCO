@@ -94,7 +94,8 @@ class AccountMove(models.Model):
             self.after_wht = total
             self.global_order_discount = self.after_wht
 
-    @api.depends("tax_amount")
+    @api.depends("wth_amount", "tax_amount", 'global_discount_type',
+                 'global_order_discount')
     def compute_after_tax_wht(self):
         self.after_tax_wht = 0
         if self.case1 == True:
