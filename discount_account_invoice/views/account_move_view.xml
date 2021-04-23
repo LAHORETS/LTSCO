@@ -11,7 +11,7 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='vat']" position="after">
-                    <field name="exempt"/>
+<!--                     <field name="exempt"/> -->
                     <field name="fbr_ntn"/>
                     <field name="fbr_stn"/>
                     <field name="tax_type"/>
