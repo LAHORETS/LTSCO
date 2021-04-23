@@ -5,19 +5,19 @@
 <odoo>
     <data>
 
-<!--         <record id="view_partner_form_fbr_inh" model="ir.ui.view">
+        <record id="view_partner_form_fbr_inh" model="ir.ui.view">
             <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='vat']" position="after">
-<!--                     <field name="exempt"/> -->
+                    <field name="exempt"/>
                     <field name="fbr_ntn"/>
                     <field name="fbr_stn"/>
                     <field name="tax_type"/>
                 </xpath>
             </field>
-        </record> -->
+        </record>
 
         <record id="inherit_account_move_form_view" model="ir.ui.view">
             <field name="name">account.move.form</field>
