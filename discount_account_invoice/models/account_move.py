@@ -16,17 +16,19 @@ class FbrTaxesPartner(models.Model):
     _inherit = 'res.partner'
 
     fbr_ntn = fields.Boolean("NTN")
+    exempt = fields.Boolean("Exemption Certificate")
     fbr_stn = fields.Boolean("STN")
     tax_type = fields.Selection(selection=[("unregister", "Unregistered"),
                                            ("register", "Register")], default="unregister", string="Tax type Scope")
 
-    company_type = fields.Selection(selection_add=[('aop', 'AOP')])
+
 
 
 
 class AccountMove(models.Model):
     _inherit = "account.move"
 
+    exempt = fields.Boolean("Exemption Certificate",related='partner_id.exempt')
     wth_amount = fields.Integer("WHT")
     after_wht = fields.Float("WHT Amt", compute="compute_after_WHT")
     tax_amount = fields.Float("Tax %")
@@ -64,7 +66,7 @@ class AccountMove(models.Model):
 
         if self.partner_id.tax_type == "register" and self.partner_id.fbr_ntn == True:
             if self.partner_id.fbr_stn == True:
-                if self.partner_id.company_type == 'person' or self.partner_id.company_type == 'aop':
+                # if self.partner_id.company_type == 'person' or self.partner_id.company_type == 'aop':
                     self.case3 = True
                     self.case = True
 
