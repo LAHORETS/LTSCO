@@ -5,7 +5,7 @@
 <odoo>
     <data>
 
-<!--         <record id="view_partner_form_fbr_inh" model="ir.ui.view">
+        <record id="view_partner_form_fbr_inh" model="ir.ui.view">
             <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
@@ -24,7 +24,7 @@
                     <field name="partner_type" options="{'horizontal': true}" class="oe_edit_only" widget="radio"/>
                    </xpath>
             </field>
-        </record> -->
+        </record>
 
         <record id="inherit_account_move_form_view" model="ir.ui.view">
             <field name="name">account.move.form</field>
@@ -40,7 +40,7 @@
                     </button>
                 </div>
                 <xpath expr="//field[@name='ref']" position="after">
-<!--                     <field name="exempt"/> -->
+                    <field name="exempt"/>
                     <field name="case1"  invisible="1"/>
                     <field name="case2" invisible="1"/>
                     <field name="case3"  invisible="1"/>
