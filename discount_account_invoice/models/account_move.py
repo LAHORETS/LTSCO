@@ -40,7 +40,7 @@ _logger = logging.getLogger(__name__)
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    exempt = fields.Boolean("Exemption Certificate",related='partner_id.exempt')
+#     exempt = fields.Boolean("Exemption Certificate",related='partner_id.exempt')
     wth_amount = fields.Integer("WHT")
     after_wht = fields.Float("WHT Amt", compute="compute_after_WHT")
     tax_amount = fields.Float("Tax %")
