@@ -11,7 +11,7 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='vat']" position="after">
-<!--                     <field name="exempt"/> -->
+                    <field name="exempt"/>
                     <field name="fbr_ntn"/>
                     <field name="fbr_stn"/>
                     <field name="tax_type"/>
@@ -20,9 +20,9 @@
                 <xpath expr="//field[@name='company_type']" position="attributes">
                 <attribute name="invisible">1</attribute>
                    </xpath>
-<!--                    <xpath expr="//field[@name='company_type']" position='after'>
+                   <xpath expr="//field[@name='company_type']" position='after'>
                     <field name="partner_type" options="{'horizontal': true}" class="oe_edit_only" widget="radio"/>
-                   </xpath> -->
+                   </xpath>
             </field>
         </record>
 
@@ -40,7 +40,7 @@
                     </button>
                 </div>
                 <xpath expr="//field[@name='ref']" position="after">
-<!--                     <field name="exempt"/> -->
+                    <field name="exempt"/>
                     <field name="case1"  invisible="1"/>
                     <field name="case2" invisible="1"/>
                     <field name="case3"  invisible="1"/>
