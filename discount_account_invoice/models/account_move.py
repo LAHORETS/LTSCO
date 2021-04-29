@@ -12,35 +12,35 @@ from odoo.exceptions import UserError
 from odoo.tools import float_is_zero, float_compare
 
 _logger = logging.getLogger(__name__)
-class FbrTaxesPartner(models.Model):
-    _inherit = 'res.partner'
+# class FbrTaxesPartner(models.Model):
+#     _inherit = 'res.partner'
 
-    fbr_ntn = fields.Boolean("NTN")
-    exempt = fields.Boolean("Exemption Certificate")
-    fbr_stn = fields.Boolean("STN")
-    tax_type = fields.Selection(selection=[("unregister", "Unregistered"),
-                                           ("register", "Register")], default="unregister", string="Tax type Scope")
+#     fbr_ntn = fields.Boolean("NTN")
+#     exempt = fields.Boolean("Exemption Certificate")
+#     fbr_stn = fields.Boolean("STN")
+#     tax_type = fields.Selection(selection=[("unregister", "Unregistered"),
+#                                            ("register", "Register")], default="unregister", string="Tax type Scope")
 
-class AccountPayment(models.Model):
-    _inherit = 'res.partner'
+# class AccountPayment(models.Model):
+#     _inherit = 'res.partner'
 
-    partner_type=fields.Selection([("individual", "Individual"),
-                                           ("company", "Company"),("aop", "AOP")])
+#     partner_type=fields.Selection([("individual", "Individual"),
+#                                            ("company", "Company"),("aop", "AOP")])
 
-    @api.onchange('partner_type')
-    def _onchange_company_type(self):
-        if self.partner_type =='individual' or 'aop':
-            self.company_type='person'
-        if self.partner_type == 'company':
-            print("working")
-            self.company_type = 'company'
+#     @api.onchange('partner_type')
+#     def _onchange_company_type(self):
+#         if self.partner_type =='individual' or 'aop':
+#             self.company_type='person'
+#         if self.partner_type == 'company':
+#             print("working")
+#             self.company_type = 'company'
 
 
 
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    exempt = fields.Boolean("Exemption Certificate",related='partner_id.exempt')
+#     exempt = fields.Boolean("Exemption Certificate",related='partner_id.exempt')
     wth_amount = fields.Integer("WHT")
     after_wht = fields.Float("WHT Amt", compute="compute_after_WHT")
     tax_amount = fields.Float("Tax %")
