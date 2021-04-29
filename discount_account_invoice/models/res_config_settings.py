@@ -1,12 +1,4 @@
-# -*- coding: utf-8 -*-
-##############################################################################
-# Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>)
-# See LICENSE file for full copyright and licensing details.
-# License URL : <https://store.webkul.com/license.html/>
-##############################################################################
-
 from odoo import api, fields, models, _
-
 
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
@@ -15,22 +7,22 @@ class ResConfigSettings(models.TransientModel):
         string="A Income Tax on invoices/bills",
         implied_group='discount_account_invoice.group_order_global_discount',
         config_parameter='account.group_order_global_discount',
-        help="Allows to give a Income Taxon invoice/bills. ")
+        help="Allows to give a Income Tax on invoice/bills. ")
     global_discount_tax = fields.Selection(
         selection=[('untax', 'Untaxed amount'), ('taxed', 'Tax added amount')],
         string="Income Tax Calculation",
         default="untax",
-        help="Income Taxcalculation will be ( \
+        help="Income Tax calculation will be ( \
              'untax' : Income Tax will be applied before applying tax, \
              'taxed : Income Tax will be applied after applying tax)")
     discount_account_invoice = fields.Many2one(
-        string="Invoice Discount Account",
+        string="Income Tax Account",
         comodel_name='account.account',
         related="company_id.discount_account_invoice",
         readonly=False,
-        help="Account for Income Tax on invoices.")
+        help="Account for Global discount on invoices.")
     discount_account_bill = fields.Many2one(
-        string="Bill Discount Account",
+        string="Income Tax",
         comodel_name='account.account',
         related="company_id.discount_account_bill",
         readonly=False,
