@@ -71,9 +71,9 @@ class AccountMove(models.Model):
                     if i.invoice_date >= fiscalObj.date_from and i.invoice_date <= fiscalObj.date_to:
                         for k in i.invoice_line_ids:
                             if k.product_id.type=="product":
-                                total = total + i.price_subtotal
+                                total = total + k.price_subtotal
                             else:
-                                total1 = total1 + i.price_subtotal
+                                total1 = total1 + k.price_subtotal
         self.prodtotal = total
         self.servicetotal = total1
 
