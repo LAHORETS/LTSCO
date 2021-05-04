@@ -56,8 +56,8 @@ class AccountMove(models.Model):
                                   compute="compute_fiscal_year")
     service_tax = fields.Selection([('yes', 'Deductable'), ('no', 'Not Deductable')], string="Service Tax",
                                    compute="compute_fiscal_year")
-    prodtotal = fields.Float("Total Type Product", compute="compute_fiscal_year")
-    servicetotal = fields.Float("Total Type Service", compute="compute_fiscal_year")
+    prodtotal = fields.Float("Total Product Amt", compute="compute_fiscal_year")
+    servicetotal = fields.Float("Total Service Amt", compute="compute_fiscal_year")
 
     @api.depends("partner_id")
     def compute_fiscal_year(self):
