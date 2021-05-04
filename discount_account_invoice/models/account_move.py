@@ -67,12 +67,13 @@ class AccountMove(models.Model):
         total1 = 0
         for i in accobj:
             if i.state == "posted":
-                if i.bill_type == "product":
+
                     if i.invoice_date >= fiscalObj.date_from and i.invoice_date <= fiscalObj.date_to:
-                        total = total + i.amount_untaxed
-                if i.bill_type == "service":
-                    if i.invoice_date >= fiscalObj.date_from and i.invoice_date <= fiscalObj.date_to:
-                        total1 = total1 + i.amount_untaxed
+                        for k in i.invoice_line_ids:
+                            if k.product_id.type=="product":
+                                total = total + i.price_subtotal
+                            else:
+                                total1 = total1 + i.price_subtotal
         self.prodtotal = total
         self.servicetotal = total1
 
