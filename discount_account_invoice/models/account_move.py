@@ -52,6 +52,40 @@ class AccountMove(models.Model):
     case4 = fields.Boolean("Case 3", compute="compute_case_partner")
     case = fields.Boolean("Case")
     fbr_taxes = fields.Integer(compute='compute_count')
+    income_tax = fields.Selection([('yes', 'Deductable'), ('no', 'Not Deductable')], string="Product Tax",
+                                  compute="compute_income_year")
+    service_tax = fields.Selection([('yes', 'Deductable'), ('no', 'Not Deductable')], string="Service Tax",
+                                   compute="compute_income_year")
+    prodtotal = fields.Float("Total Type Product", compute="compute_fiscal_year")
+    servicetotal = fields.Float("Total Type Service", compute="compute_fiscal_year")
+
+    @api.depends("partner_id")
+    def compute_fiscal_year(self):
+        fiscalObj = self.env['account.fiscal.year'].search([])
+        accobj = self.env['account.move'].search([('partner_id', '=', self.partner_id.id), ('type', '=', 'in_invoice')])
+        total = 0
+        total1 = 0
+        for i in accobj:
+            if i.state == "posted":
+                if i.bill_type == "product":
+                    if i.invoice_date >= fiscalObj.date_from and i.invoice_date <= fiscalObj.date_to:
+                        total = total + i.amount_untaxed
+                if i.bill_type == "service":
+                    if i.invoice_date >= fiscalObj.date_from and i.invoice_date <= fiscalObj.date_to:
+                        total1 = total1 + i.amount_untaxed
+        self.prodtotal = total
+        self.servicetotal = total1
+
+
+        if self.prodtotal >= 75000:
+            self.income_tax = "yes"
+        else:
+            self.income_tax = "no"
+
+        if self.servicetotal >= 30000:
+            self.service_tax= "yes"
+        else:
+            self.service_tax = "no"
 
     def compute_count(self):
         self.fbr_taxes=0

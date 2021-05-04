@@ -41,6 +41,10 @@
                 </div>
                 <xpath expr="//field[@name='ref']" position="after">
                     <field name="exempt"/>
+                    <field name="income_tax"/>
+					<field name="bill_type"/>
+					<field name="prodtotal"/>
+					<field name="servicetotal"/>
                     <field name="case1"  invisible="1"/>
                     <field name="case2" invisible="1"/>
                     <field name="case3"  invisible="1"/>
