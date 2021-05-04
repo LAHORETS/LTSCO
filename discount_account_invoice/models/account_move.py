@@ -53,9 +53,9 @@ class AccountMove(models.Model):
     case = fields.Boolean("Case")
     fbr_taxes = fields.Integer(compute='compute_count')
     income_tax = fields.Selection([('yes', 'Deductable'), ('no', 'Not Deductable')], string="Product Tax",
-                                  compute="compute_income_year")
+                                  compute="compute_fiscal_year")
     service_tax = fields.Selection([('yes', 'Deductable'), ('no', 'Not Deductable')], string="Service Tax",
-                                   compute="compute_income_year")
+                                   compute="compute_fiscal_year")
     prodtotal = fields.Float("Total Type Product", compute="compute_fiscal_year")
     servicetotal = fields.Float("Total Type Service", compute="compute_fiscal_year")
 
