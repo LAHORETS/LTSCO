@@ -124,7 +124,7 @@ class AccountMove(models.Model):
                     self.case = True
 
     @api.depends("wth_amount", "tax_amount", 'global_discount_type',
-                 'global_order_discount')
+                 'global_order_discount','amount_tax')
     def compute_after_WHT(self):
         self.after_wht = 0
         if self.case1 == True:
@@ -144,7 +144,7 @@ class AccountMove(models.Model):
             self.global_order_discount = self.after_wht
 
     @api.depends("wth_amount", "tax_amount", 'global_discount_type',
-                 'global_order_discount')
+                 'global_order_discount','amount_tax')
     def compute_after_tax_wht(self):
         self.after_tax_wht = 0
         if self.case1 == True:
