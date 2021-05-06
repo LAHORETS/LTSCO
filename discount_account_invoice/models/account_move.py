@@ -113,7 +113,7 @@ class AccountMove(models.Model):
 
         if self.partner_id.tax_type == "register" and self.partner_id.fbr_ntn == True:
             if self.partner_id.fbr_stn == True:
-                # if self.partner_id.company_type == 'person' or self.partner_id.company_type == 'aop':
+                if self.partner_id.partner_type == 'person' or self.partner_id.company_type == 'aop':
                     self.case3 = True
                     self.case = True
 
