@@ -49,7 +49,7 @@ class AccountMove(models.Model):
     case1 = fields.Boolean("Case 1", compute="compute_case_partner")
     case2 = fields.Boolean("Case 2", compute="compute_case_partner")
     case3 = fields.Boolean("Case 3", compute="compute_case_partner")
-    case4 = fields.Boolean("Case 3", compute="compute_case_partner")
+    case4 = fields.Boolean("Case 4", compute="compute_case_partner")
     case = fields.Boolean("Case")
     fbr_taxes = fields.Integer(compute='compute_count')
     income_tax = fields.Selection([('yes', 'Deductable'), ('no', 'Not Deductable')], string="Product Tax",
